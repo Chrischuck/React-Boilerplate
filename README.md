@@ -29,13 +29,7 @@ npm install
 npm run dev
 ```
 
-**5. Testing with `jest` and `enzyme`:**
-
-```sh
-npm test
-```
-
-**6. Build for production:**
+**5. Build for production:**
 
 ```sh
 npm run build

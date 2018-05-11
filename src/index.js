@@ -1,17 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-
-import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+import React from "react";
+import ReactDOM from "react-dom";
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
 
 import AppRouter from './routes'
-import { store } from './redux'
+
+const client = new ApolloClient({ uri: 'http://localhost:3000/graphql' });
+
 
 ReactDOM.render(
-  <Provider store={ store }>
+  <ApolloProvider client={client}>
     <AppRouter />
-  </Provider>,
+  </ApolloProvider>,
   document.getElementById('app')
 );
-
-OfflinePluginRuntime.install();
